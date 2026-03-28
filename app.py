@@ -196,8 +196,9 @@ with col_result:
         results = model.predict(source=img_array, conf=confidence, verbose=False)
         result = results[0]
 
+
         annotated = result.plot()
-        annotated_rgb = annotated[:, :, ::-1]
+        annotated_rgb = annotated
         st.image(annotated_rgb, caption="Detected fruits", use_container_width=True)
 
         boxes = result.boxes
